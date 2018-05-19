@@ -1,8 +1,8 @@
+package Assignment;
 import java.util.Scanner;
 
 public class Patient {
     int patient_id;
-    int postalcode;
 
     //First name G and S
     String firstname;
@@ -49,8 +49,17 @@ public class Patient {
         this.address = address;
     }
 
-    //Multiple Constructor
-    public Patient (int id, String fname, String lname, String address, String city, String province, int pc)
+    //Postal Code
+    String postalcode;
+    public String getPostalcode() {
+        return postalcode;
+    }
+    public void setPostalcode(String postalcode) {
+        this.postalcode = postalcode;
+    }
+
+    //Constructor
+    public Patient (int id, String fname, String lname, String address, String city, String province, String pc)
     {
         this.patient_id=id;
         this.firstname=fname;
@@ -61,17 +70,16 @@ public class Patient {
         this.postalcode=pc;
     }
 
-    public Patient ()
-    {
-        return;
-    }
+    //as Mentioned default cons
+    public Patient() { }
 
     //String to return details in formatted manner
     String all;
+
     //Patient info method
     String getPatientinfo ()
     {
-        all= "Patience Info.\nName- " + patient_id + "\nFirst Name- " + firstname + "\nLast Name- "+ lastname + "\nAddress- "+ address + "\nCity- "+ city + "\nProvince- " + province + "\nPostal Code- " + postalcode;
+        all= "----------------------------------\nPatience Info.\nId- " + patient_id + "\nName- " + firstname + " "+ lastname + "\nAddress- "+ address + "\n"+ city + "\n" + province + "\n" + postalcode;
         return all;
     }
 }
