@@ -22,28 +22,46 @@ public class BankAccountTest {
         System.out.printf("%s have balance: $%.2f%n",
                 account.getName(), account.getBalance());
 
-        //Deposit method
-        System.out.printf("Enter amount to be deposited- ");
-        double depositAmount = input.nextDouble();
+        //for loop for selection of Withdraw or Deposit
+        int i;
+        for(i=0;i<5;i++) {
+            System.out.println("Enter 1 to Deposit,\n2 to withdraw,\n3 to exit");
+            int option = input.nextInt();
+        if(option==1)
+        {
+            //Deposit method
+            System.out.printf("Enter amount to be deposited- $");
+            double depositAmount = input.nextDouble();
+            //Add to account's balance
+            account.deposit(depositAmount);
 
-        //Add to account's balance
-        account.deposit(depositAmount);
+            // display balance
+            JOptionPane.showMessageDialog(null, "Balance- $" + account.getBalance());
+           /*System.out.printf("%s balance: $%.2f as of now%n",
+                    account.getName(), account.getBalance());*/
+           i=1;
+        }
+        else if(option==2) {
+            //Withdraw method
+            System.out.printf("Enter amount to be withdrawn- $");
+            double withdrawAmount = input.nextDouble();
 
-        // display balance
-        JOptionPane.showMessageDialog(null, account.getBalance());
-       /*System.out.printf("%s balance: $%.2f as of now%n",
-                account.getName(), account.getBalance());*/
+            //Subtract to account's balance
+            account.withdraw(withdrawAmount);
 
-        //Withdraw method
-        System.out.printf("Enter amount to be withdrawn- ");
-        double withdrawAmount = input.nextDouble();
-
-        //Subtract to account's balance
-        account.withdraw(withdrawAmount);
-
-        // display balance
-         JOptionPane.showMessageDialog(null, account.getBalance());
-        /*System.out.printf("%s has balance: $%.2f as of now%n",
-                account.getName(), account.getBalance());*/
-       }
+            // display balance
+            JOptionPane.showMessageDialog(null,"Balance- $" + account.getBalance());
+            /*System.out.printf("%s has balance: $%.2f as of now%n",
+                    account.getName(), account.getBalance());*/
+            i=1;
+        }
+        else if(option==3){i=10;
+            JOptionPane.showMessageDialog(null,"Available balance after all transections- " + account.getBalance());
+        }
+        else
+        {
+            System.out.printf("Invalid Choice...");
+        }
+        }
+    }
 }
