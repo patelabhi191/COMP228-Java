@@ -79,7 +79,7 @@ public class Patient {
     //Patient info method
     String getPatientinfo ()
     {
-        all= "----------------------------------\nPatience Info.\nId- " + patient_id + "\nName- " + firstname + " "+ lastname + "\nAddress- "+ address + "\n"+ city + "\n" + province + "\n" + postalcode;
+        all= "\nPatience Info.\nId- " + patient_id + "\nName- " + firstname + " "+ lastname + "\nAddress- "+ address + "\n"+ city + "\n" + province + "\n" + postalcode;
         return all;
     }
 }

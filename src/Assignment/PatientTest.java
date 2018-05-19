@@ -28,6 +28,8 @@ public class PatientTest{
         Patient pi= new Patient(Id,FirstName,LastName,Address,City,Province,pc);
         //String to record all things in formatted way
         String output= pi.getPatientinfo();
-        System.out.printf(output);
+
+        //IF MESSAGE BOX DIRECTLY DOES NOT APPEAR, PRESS ALT + TAB
+        JOptionPane.showMessageDialog(null,output);
     }
 }
