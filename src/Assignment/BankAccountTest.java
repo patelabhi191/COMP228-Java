@@ -9,6 +9,9 @@ public class BankAccountTest {
         // create a Scanner to obtain input from the command window
         Scanner input = new Scanner(System.in);
 
+        //JOptionPane methods not used here for input, as i have made program
+        // that can have multiple transaction... So on console...
+
         //Details entry of accounts
         System.out.println("Enter the banking details carefully:-");
         System.out.printf("Accountholder name- ");
