@@ -1,4 +1,4 @@
-package Assignment;
+package Assignment1;
 import javax.swing.JOptionPane;
 import java.util.Scanner;
 
