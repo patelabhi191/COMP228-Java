@@ -1,5 +1,7 @@
 package Assignment;
 
+import javax.swing.*;
+
 public class GameObject {
 
     double center;//As (X+Y)/2 could be decimal
@@ -41,5 +43,4 @@ public class GameObject {
         String dis = "Center would be " + center + "\nVelocity is " + velocity + "\nRotation Angle of " + rotation + "\nState of object " + state;
         return dis;
     }
-
 }
