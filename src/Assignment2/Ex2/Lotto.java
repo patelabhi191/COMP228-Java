@@ -8,12 +8,11 @@ public class Lotto {
     int[] alotto ={};
     int sum=0;
 
-    public int Lotto (){
+    public Lotto (){
         for (int i=0;i<3;i++ )
         {
             alotto[i] =1 + randomNumbers.nextInt(9);
-            sum += alotto[i];
+            
         }
-        return sum;
     }
 }

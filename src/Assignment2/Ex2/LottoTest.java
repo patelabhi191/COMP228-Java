@@ -9,9 +9,12 @@ public class LottoTest {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
+        boolean ch = true;
 
-        JOptionPane.showMessageDialog(null,"Welcome To Lotto");
-        for(int i=0;i<4;i++) {
+        Lotto lot = new Lotto();
+
+        JOptionPane.showMessageDialog(null, "Welcome To Lotto");
+        do {
             String c = JOptionPane.showInputDialog(null, "Enter Your choice- ");
             int choice = Integer.parseInt(c);
 
@@ -19,9 +22,15 @@ public class LottoTest {
             if (choice < 3 || choice > 27) {
                 JOptionPane.showMessageDialog(null, "OOps.... Wrong Entry !!!%n" +
                         "Number should be from 3 to 27");
-                i=1;
+                ch = true;
+            } else {
+                ch = false;
+                break;
             }
-            else {i=5;}
+        } while (ch = true);
+
+        for (int i = 1; i < 6; i++) {
+            JOptionPane.showMessageDialog(null,"Round "+ i +"\nOur Number - ");
         }
     }
 }
