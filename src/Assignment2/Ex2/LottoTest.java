@@ -4,12 +4,15 @@ import javax.swing.JOptionPane;
 
 public class LottoTest {
 
+    public enum Status {CONTINUE, WON, LOST};
 
     public static void main(String[] args) {
         boolean ch = true;
         int choice;
         int turn = 1;
         int sum=0;
+        Status status = Status.CONTINUE;
+
 
         //Instantiate object of lotto
         Lotto lot = new Lotto();
@@ -29,25 +32,31 @@ public class LottoTest {
             } else {
                 ch = false;
                 break;
-            }
+            }//Boolean ch is limited for validation of Entry made by user only.
         } while (ch = true);
 
 
         for (int i = 1; i < 6; i++) {
             lot.populate();
+            //for loop to add those 3 randon numbers
             for (int j : lot.showArray()) {
                 sum += j;
             }
             if (choice==sum){
                 JOptionPane.showMessageDialog(null, "System draw = " + sum + "\nYour Choice = " + choice + "\nYou Won.!!");
                 sum=0;
+                status=Status.WON;
+                break;
             }
             else{
                 JOptionPane.showMessageDialog(null,"System draw = " + sum + "\nYour Choice = " + choice + "\nYou have "+(5-turn)+" turns left.");
                 turn++;
                 sum=0;
             }
+            if (turn>5)
+                status = Status.LOST;
         }
-
+        if(status == Status.LOST)
+            JOptionPane.showMessageDialog(null,"Your turns are over... Computer wins...");
     }
 }
