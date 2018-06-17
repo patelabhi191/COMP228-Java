@@ -11,8 +11,10 @@ public class InsuranceDriver {
         System.out.println("Enter L if you need Life Insurance\n" +
                 "Enter H if you need Health Insurance\n");
 
+        //Polymorphism starts
         Insurance[] ins = new Insurance[5];
 
+        //taking 5 entries
         for (int i = 0; i < 5; i++) {
             System.out.println("Enter your insurance type# "+(i+1)+":- ");
             String checkLH = input.next();//user inputs as l or h
@@ -32,11 +34,10 @@ public class InsuranceDriver {
             }
         }
 
+        //Displaying the results
         for (int j = 1; j < ins.length+1; j++) {
             System.out.printf("Insurances number " + j + " is of " + ins[j-1].displayInfo());
         }
-
-
     }
 }
 
