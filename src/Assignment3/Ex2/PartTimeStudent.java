@@ -12,8 +12,9 @@ public class PartTimeStudent extends Student{
         return creditHours;
     }
 
+    ////College hours cannot exceed 40, but here we take 43 as student can have a combo subject
     public void setCreditHours(int creditHours) throws IllegalArgumentException{
-        if(creditHours<0 || creditHours >43 )//College hours cannot exceed 40, but here we take 43 as student can have a combo subject
+        if(creditHours<0 || creditHours >43 )
             throw new IllegalArgumentException("Invalid number of hours entered");
         this.creditHours=creditHours;
     }
