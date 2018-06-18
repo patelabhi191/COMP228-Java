@@ -27,16 +27,16 @@ public abstract class Mortgage implements MortgageConstant {
         this.name = name;
     }
 
-    public int getAmount(int amount)throws IllegalArgumentException  {
-            if(amount < 0.0 && amount > 300000){
-                throw new IllegalArgumentException("The value for mortgage cannot exceed 300,000");
-            }
-            this.amount=amount;
+    public int getAmount(int amount){
         return amount;
     }
 
-    public void setAmount(int amount) {
+    //setAmount exception for amount less than 0 and 300,000
+    public int setAmount(int amount)throws IllegalArgumentException  {
+        if(amount < 0.0 || amount > 300000){
+            throw new IllegalArgumentException("The value for mortgage cannot exceed 300,000");}
         this.amount = amount;
+        return amount;
     }
 
     public double getRate() {
@@ -60,10 +60,11 @@ public abstract class Mortgage implements MortgageConstant {
     double rate;
     int term;
 
+    //Printing method
     public String getMortgageInfo (){
         return String.format("Mortgage#- "+getMortgageNumber()+" Name- " + getName()
-                + " Amount- " + getAmount(amount) + "\nRate- " + getRate() + " Term- " + getTerm()
-        + " total amount to be paid- " + (getAmount(amount)+(getTerm()*getRate()*getAmount(amount))));
+                + " Amount- " + setAmount(amount) + "\nRate- " + getRate() + " Term- " + getTerm()
+        + " total amount to be paid- " + (setAmount(amount)+(getTerm()*getRate()*getAmount(amount))));
     }
 
 }
