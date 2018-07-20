@@ -7,39 +7,61 @@ import java.awt.event.ActionListener;
 
 public class Design extends JFrame implements ActionListener {
 
-    private JTextField[] texts;
-    private JLabel[] labels;
-    private JPanel pCenter;
-    /*private final JTextField textAddress;
-    private final JTextField textProvince;
-    private final JTextField textCity;
-    private final JTextField textPostalCode;
-    private final JTextField textPhone;
-    private final JTextField textEmail;
-*/
+    private JTextField textsName, textAdd, textProvince, textCity, textPostal, textPhone, textEmail;
+    private JLabel labelEmpty;
+    private JCheckBox studentCouncil, volunteer;
+    private JPanel pCenter, pDown,p;
+
 
     public Design() {
-        setLayout(new BorderLayout());
+        p = new JPanel();
         pCenter = new JPanel();
+        pDown = new JPanel();
 
 
-        pCenter.setLayout(new GridLayout(4, 7, 1, 1));
-        labels[0] = new JLabel("Name: ");
-        labels[1] = new JLabel("Address: ");
-        labels[2] = new JLabel("Province: ");
-        labels[3] = new JLabel("City: ");
-        labels[4] = new JLabel("Postal Code: ");
-        labels[5] = new JLabel("Phone: ");
-        labels[6] = new JLabel("Email: ");
+        pCenter.setLayout(new GridLayout(8, 3));
 
-        for (int count = 0; count < 7; count++) {
-            pCenter.add(labels[count]);
-        }
-        for (int count = 0; count < 7; count++) {
-            texts[count] = new JTextField(15);
-            texts[count].addActionListener(this);
-            pCenter.add(texts[count]);
-        }
+        pCenter.add(new JLabel("Name: "));
+        pCenter.add(textsName = new JTextField(10));
+        pCenter.add(new JLabel(""));
+
+        pCenter.add(new JLabel("Address: "));
+        pCenter.add(textAdd = new JTextField(10));
+        pCenter.add(studentCouncil = new JCheckBox("Student Council"));
+
+        pCenter.add(new JLabel("Province: "));
+        pCenter.add(textProvince = new JTextField(10));
+        pCenter.add(new JLabel(""));
+
+        pCenter.add(new JLabel("City: "));
+        pCenter.add(textCity = new JTextField(10));
+        pCenter.add(new JLabel(""));
+
+        pCenter.add(new JLabel("Postal Code: "));
+        pCenter.add(textPostal = new JTextField(10));
+        pCenter.add(new JLabel(""));
+
+        pCenter.add(new JLabel("Phone: "));
+        pCenter.add(textPhone = new JTextField(10));
+        pCenter.add(new JLabel(""));
+
+        pCenter.add(new JLabel("Province: "));
+        pCenter.add(textProvince = new JTextField(10));
+        pCenter.add(volunteer = new JCheckBox("Volunteer Work"));
+
+        pCenter.add(new JLabel("Email: "));
+        pCenter.add(textEmail = new JTextField(10));
+        pCenter.add(new JLabel(""));
+
+
+
+
+
+
+
+        add(pCenter, BorderLayout.CENTER);
+      //  add(pDown, BorderLayout.SOUTH);
+
     }
 
 
@@ -52,7 +74,6 @@ public class Design extends JFrame implements ActionListener {
     // main method
     public static void main(String[] args) {
         Design lmTest = new Design();
-        lmTest.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         lmTest.setSize(500, 300);
         lmTest.setVisible(true);
     }
