@@ -22,3 +22,4 @@ public abstract class Insurance {
 
     public abstract String displayInfo();
 }
+

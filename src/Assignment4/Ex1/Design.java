@@ -8,59 +8,78 @@ import java.awt.event.ActionListener;
 public class Design extends JFrame implements ActionListener {
 
     private JTextField textsName, textAdd, textProvince, textCity, textPostal, textPhone, textEmail;
-    private JLabel labelEmpty;
+    private JTextArea textArea;
     private JCheckBox studentCouncil, volunteer;
-    private JPanel pCenter, pDown,p;
+    private JButton buttonDisplay;
+    private JRadioButton computer, business;
+    private JPanel pCenter, pDown,pMid;
+    private final JComboBox<String> subjects;
+    private static final String[] csSubjects = {"Java", "Python", "C#", "Database"};
+    private static final String[] businessSubjects = {"Accounts", "Maths", "Communication"};
 
 
     public Design() {
-        p = new JPanel();
+
+        JPanel pChoice = new JPanel();
+        pChoice.setLayout(new FlowLayout());
+
         pCenter = new JPanel();
-        pDown = new JPanel();
-
-
-        pCenter.setLayout(new GridLayout(8, 3));
+        pCenter.setLayout(new GridLayout(8, 4));
 
         pCenter.add(new JLabel("Name: "));
         pCenter.add(textsName = new JTextField(10));
         pCenter.add(new JLabel(""));
 
+        pChoice.add(computer = new JRadioButton("Computer Science",true));
+        pChoice.add(business = new JRadioButton("Business",false));
+        pCenter.add(pChoice);
+
         pCenter.add(new JLabel("Address: "));
         pCenter.add(textAdd = new JTextField(10));
         pCenter.add(studentCouncil = new JCheckBox("Student Council"));
+        pCenter.add(subjects = new JComboBox<String>(csSubjects));
 
         pCenter.add(new JLabel("Province: "));
         pCenter.add(textProvince = new JTextField(10));
+        pCenter.add(new JLabel(""));
         pCenter.add(new JLabel(""));
 
         pCenter.add(new JLabel("City: "));
         pCenter.add(textCity = new JTextField(10));
         pCenter.add(new JLabel(""));
+        pCenter.add(new JLabel(""));
 
         pCenter.add(new JLabel("Postal Code: "));
         pCenter.add(textPostal = new JTextField(10));
         pCenter.add(new JLabel(""));
+        pCenter.add(textArea = new JTextArea());
 
         pCenter.add(new JLabel("Phone: "));
         pCenter.add(textPhone = new JTextField(10));
+        pCenter.add(new JLabel(""));
         pCenter.add(new JLabel(""));
 
         pCenter.add(new JLabel("Province: "));
         pCenter.add(textProvince = new JTextField(10));
         pCenter.add(volunteer = new JCheckBox("Volunteer Work"));
+        pCenter.add(new JLabel(""));
 
         pCenter.add(new JLabel("Email: "));
         pCenter.add(textEmail = new JTextField(10));
         pCenter.add(new JLabel(""));
+        pCenter.add(new JLabel(""));
+
+        pMid = new JPanel();
+        pMid.add(buttonDisplay = new JButton("Display"));
 
 
 
+        pDown = new JPanel();
 
 
-
-
-        add(pCenter, BorderLayout.CENTER);
-      //  add(pDown, BorderLayout.SOUTH);
+        add(pCenter, BorderLayout.NORTH);
+        add(pMid, BorderLayout.CENTER);
+        add(pDown, BorderLayout.SOUTH);
 
     }
 
@@ -74,7 +93,7 @@ public class Design extends JFrame implements ActionListener {
     // main method
     public static void main(String[] args) {
         Design lmTest = new Design();
-        lmTest.setSize(500, 300);
+        lmTest.setSize(1080, 600);
         lmTest.setVisible(true);
     }
 }
