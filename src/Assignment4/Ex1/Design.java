@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class Design extends JFrame implements ActionListener {
 
     private JTextField textsName, textAdd, textProvince, textCity, textPostal, textPhone, textEmail;
-    private JTextArea textArea;
+    private JTextArea textArea,textDisplay;
     private JCheckBox studentCouncil, volunteer;
     private JButton buttonDisplay;
     private JRadioButton computer, business;
@@ -47,12 +47,12 @@ public class Design extends JFrame implements ActionListener {
         pCenter.add(new JLabel("City: "));
         pCenter.add(textCity = new JTextField(10));
         pCenter.add(new JLabel(""));
-        pCenter.add(new JLabel(""));
+        pCenter.add(textArea = new JTextArea(2,15));
 
         pCenter.add(new JLabel("Postal Code: "));
         pCenter.add(textPostal = new JTextField(10));
         pCenter.add(new JLabel(""));
-        pCenter.add(textArea = new JTextArea());
+        pCenter.add(new JLabel(""));
 
         pCenter.add(new JLabel("Phone: "));
         pCenter.add(textPhone = new JTextField(10));
@@ -75,6 +75,7 @@ public class Design extends JFrame implements ActionListener {
 
 
         pDown = new JPanel();
+        pDown.add(textDisplay = new JTextArea(5,105));
 
 
         add(pCenter, BorderLayout.NORTH);
@@ -93,7 +94,7 @@ public class Design extends JFrame implements ActionListener {
     // main method
     public static void main(String[] args) {
         Design lmTest = new Design();
-        lmTest.setSize(1080, 600);
+        lmTest.setSize(880, 440);
         lmTest.setVisible(true);
     }
 }
