@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Design extends JFrame implements ActionListener {
+public class Design extends JFrame {
 
     private JTextField textsName, textAdd, textProvince, textCity, textPostal, textPhone, textEmail;
     private JTextArea textArea,textDisplay;
@@ -82,20 +82,39 @@ public class Design extends JFrame implements ActionListener {
         add(pMid, BorderLayout.CENTER);
         add(pDown, BorderLayout.SOUTH);
 
+
+        Events handler = new Events();
+        textsName.addActionListener(handler);
+        textProvince.addActionListener(handler);
+        textCity.addActionListener(handler);
+        textPostal.addActionListener(handler);
+        textPhone.addActionListener(handler);
+        textEmail.addActionListener(handler);
+
+
+
     }
 
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
 
+    private class Events implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String string = "";
+
+
+
+        }
     }
-
 
     // main method
     public static void main(String[] args) {
         Design lmTest = new Design();
-        lmTest.setSize(880, 440);
+        lmTest.setSize(950, 440);
         lmTest.setVisible(true);
     }
+
+
 }
+
 
