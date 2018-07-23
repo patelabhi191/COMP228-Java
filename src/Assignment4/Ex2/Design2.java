@@ -43,6 +43,7 @@ public class Design2 extends Application {
         pane.add(new CheckBox("Student Council"),2,1);
         pane.add(new CheckBox("Volunteer Work"),2,5);
 
+        //flow for cs and budiness
         FlowPane paneRadio = new FlowPane();
         paneRadio.setPadding(new Insets(1, 0, 1, 2));
         paneRadio.getChildren().addAll(new RadioButton("Computer Science"), new RadioButton("Business"));
@@ -51,7 +52,7 @@ public class Design2 extends Application {
         pane.add(paneRadio,3,1);
 
 
-
+        //button setup
         Button btAdd = new Button("Display");
         pane.add(btAdd,2,7);
 
